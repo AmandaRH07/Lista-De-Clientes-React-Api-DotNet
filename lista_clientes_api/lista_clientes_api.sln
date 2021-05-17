@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lista_clientes_api", "lista_clientes_api\lista_clientes_api.csproj", "{299C3F93-A9B4-4F0B-976B-025894ADF811}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{7942F7CD-EA76-4CBD-A198-DF8CC175C84D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{299C3F93-A9B4-4F0B-976B-025894ADF811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{299C3F93-A9B4-4F0B-976B-025894ADF811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{299C3F93-A9B4-4F0B-976B-025894ADF811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{299C3F93-A9B4-4F0B-976B-025894ADF811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7942F7CD-EA76-4CBD-A198-DF8CC175C84D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7942F7CD-EA76-4CBD-A198-DF8CC175C84D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7942F7CD-EA76-4CBD-A198-DF8CC175C84D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7942F7CD-EA76-4CBD-A198-DF8CC175C84D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF5E4607-6400-4E91-98E8-183B2DBD518D}
+	EndGlobalSection
+EndGlobal
