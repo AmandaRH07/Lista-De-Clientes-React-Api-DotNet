@@ -1,6 +1,7 @@
 ﻿using Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 public class Cliente
@@ -30,8 +31,8 @@ public class Cliente
             {
                 Id = Convert.ToInt32(reader["Id"]),
                 Nome = reader["Nome"].ToString(),
-                Telefone = reader["Telefone"].ToString(),
                 Endereco = reader["Endereco"].ToString(),
+                Telefone = reader["Telefone"].ToString(),
             });
         }
 
@@ -39,5 +40,28 @@ public class Cliente
         conn.Dispose();
         cmd.Dispose();
         return lista;
+    }
+
+    public Cliente Salvar()
+    {
+
+        SqlConnection conn = new SqlConnection(Conexao.Dados);
+        conn.Open();
+
+        //prodecure
+        SqlCommand cmd = new SqlCommand("CriarCliente @nome, @endereco, @telefone", conn);
+        cmd.Parameters.Add("@nome", SqlDbType.VarChar);
+        cmd.Parameters["@nome"].Value = this.Nome;
+
+        cmd.Parameters.Add("@endereco", SqlDbType.VarChar);
+        cmd.Parameters["@endereco"].Value = this.Endereco;
+
+        cmd.Parameters.Add("@telefone", SqlDbType.VarChar);
+        cmd.Parameters["@telefone"].Value = this.Telefone;
+
+        this.Id = Convert.ToInt32(cmd.ExecuteScalar());
+
+        conn.Close();
+        return this;
     }
 }

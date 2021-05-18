@@ -19,5 +19,12 @@ namespace lista_clientes_api.Controllers
         {
             return Cliente.Todos();
         }
+
+        [HttpPost]
+        [Route("criar")]
+        public Cliente Criar([FromBody] Cliente cliente)
+        {
+            return cliente.Salvar();
+        }
     }
 }
