@@ -26,5 +26,13 @@ namespace lista_clientes_api.Controllers
         {
             return cliente.Salvar();
         }
+
+        [HttpPut]
+        [Route("{id}")]
+        public Cliente Atualizar(int id, [FromBody] Cliente cliente)
+        {
+            cliente.Id = id;
+            return cliente.Salvar();
+        }
     }
 }

@@ -1,21 +1,42 @@
 ﻿using Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
+[Table("Clientes")]
 public class Cliente
 {
-    public Cliente()
-    {
-    }
+    private static DbContexto db = new DbContexto();
+    public Cliente() { }
 
     public int Id { get; set; }
     public string Nome { get; set; }
     public string Telefone { get; set; }
     public string Endereco { get; set; }
 
+    public Cliente Salvar()
+    {
+        if(this.Id > 0)
+        {
+            db.Clientes.Update(this);
+        }
+        else
+        {
+            db.Clientes.Add(this);
+        }
+        db.SaveChanges();
+        return this;
+    }
+
     public static List<Cliente> Todos()
+    {
+        return db.Clientes.ToList();
+    }
+
+    public static List<Cliente> Todos_Com_SqlConnection()
     {
         var lista = new List<Cliente>();
 
@@ -42,7 +63,7 @@ public class Cliente
         return lista;
     }
 
-    public Cliente Salvar()
+    public Cliente Salvar_Com_SqlConnection()
     {
 
         SqlConnection conn = new SqlConnection(Conexao.Dados);
